@@ -1,0 +1,23 @@
+GET /api/me:
+  세션에 있는 유저 정보를 돌려줌
+  header:
+    Authorization: Token <token>
+  response:
+    200: 로그인 된 상태, body에 유저 정보
+    401: 로그인 되지 않은 상태
+
+POST /api/auth/login:
+  body에 있는 인증 정보로 로그인
+  body: { username, password }
+  response:
+    200: 로그인 성공
+      body:
+        { token: string }
+    400: 로그인 실패
+
+POST /api/auth/register:
+  body에 있는 인증 정보로 유저 생성
+  body: { email, username, password }
+  response:
+    200: 가입 성공
+    400: 가입 실패

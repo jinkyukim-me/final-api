@@ -1,0 +1,2 @@
+def isLoggedin(header):
+    pass
